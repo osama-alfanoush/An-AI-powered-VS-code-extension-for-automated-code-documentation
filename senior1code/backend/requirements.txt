@@ -1,0 +1,5 @@
+fastapi
+uvicorn
+pydantic
+huggingface_hub>=0.22.0
+python-dotenv

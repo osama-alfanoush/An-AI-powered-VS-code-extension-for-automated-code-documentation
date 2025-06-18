@@ -1,0 +1,87 @@
+{
+  "name": "vscode-ai-assistant",
+  "displayName": "AI Code Assistant",
+  "description": "AI-powered code assistant with documentation generation and bug analysis",
+  "version": "0.1.0",
+  "engines": {
+    "vscode": "^1.70.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Other"
+  ],
+  "activationEvents": [
+    "onView:vscodeSidebar.openview",
+    "onCommand:vscodeSidebar.generateDocs",
+    "onCommand:vscodeSidebar.analyzeCode"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "vscodeSidebar.savePrompts",
+        "title": "Save Prompts",
+        "category": "AI Assistant"
+      },
+      {
+        "command": "vscodeSidebar.getSavedPrompts",
+        "title": "Get Saved Prompts",
+        "category": "AI Assistant"
+      },
+      {
+        "command": "vscodeSidebar.generateDocs",
+        "title": "Generate Documentation",
+        "category": "AI Assistant"
+      },
+      {
+        "command": "vscodeSidebar.analyzeCode",
+        "title": "Analyze Code for Bugs",
+        "category": "AI Assistant"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "ai-assistant",
+          "title": "AI Assistant",
+          "icon": "assets/logo_bito1.svg"
+        }
+      ]
+    },
+    "views": {
+      "ai-assistant": [
+        {
+          "type": "webview",
+          "id": "vscodeSidebar.openview",
+          "name": "Code Assistant",
+          "contextualTitle": "AI Code Assistant"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@types/vscode": "^1.70.0",
+    "@typescript-eslint/eslint-plugin": "^6.4.1",
+    "@typescript-eslint/parser": "^6.4.1",
+    "@vscode/test-electron": "^2.3.4",
+    "eslint": "^8.47.0",
+    "glob": "^10.3.3",
+    "mocha": "^10.2.0",
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "@types/uuid": "^9.0.3",
+    "uuid": "^9.0.0"
+  }
+}

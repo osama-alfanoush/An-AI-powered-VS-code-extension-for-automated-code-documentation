@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Code Assistant</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="vscode.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="logo_bito.svg" alt="AI Code Assistant Logo" class="logo">
+            <h1>AI Code Assistant</h1>
+        </header>
+        
+        <div class="code-container">
+            <h2>Your Code</h2>
+            <textarea id="code-input" placeholder="Paste your code here..."></textarea>
+        </div>
+        
+        <div class="button-container">
+            <button id="analyze-button" class="primary-button">Analyze Code</button>
+            <button id="generate-docs-button" class="primary-button">Generate Docs</button>
+        </div>
+        
+        <div id="loading-indicator" class="loading">Processing your request...</div>
+        
+        <div id="result-container" class="result-container"></div>
+    </div>
+    
+    <script src="main.js"></script>
+</body>
+</html>
